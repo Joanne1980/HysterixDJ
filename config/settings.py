@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 if os.path.isfile("env.py"):
     import env
@@ -27,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['8000-joanne1980-hysterixdj-e2tdjy02n9o.ws.codeinstitute-ide.net', 'heroku.com/apps/hysterixdj/settings']
 
@@ -64,7 +65,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,8 +93,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #    }
 #}
 
-DATABASES - {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+DATABASES = {
+'default':
+dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
