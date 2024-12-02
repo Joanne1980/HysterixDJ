@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'about',
     'music',
     'gallery',
+    'bookings',
 
 ]
 

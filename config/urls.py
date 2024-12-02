@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include ('about.urls')),
     path('', include ('music.urls')),
     path('', include ('gallery.urls')),
+    path('', include ('bookings.urls')),
 ]
