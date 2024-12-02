@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-joanne1980-hysterixdj-e2tdjy02n9o.ws.codeinstitute-ide.net']
 
+CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net',
+'https://*.herokuapp.com']
 
 # Application definition
 
@@ -37,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #Apps
+    'home',
+    
 ]
 
 MIDDLEWARE = [
