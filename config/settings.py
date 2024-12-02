@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%d7c)j&3d38h%m2+^v68a)m*21)i+iuap(io7+p@t7!c2eujl*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-joanne1980-hysterixdj-e2tdjy02n9o.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-joanne1980-hysterixdj-e2tdjy02n9o.ws.codeinstitute-ide.net', 'heroku.com/apps/hysterixdj/settings']
 
 CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net',
 'https://*.herokuapp.com']
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
     #Apps
     'home',
-    
+
 ]
 
 MIDDLEWARE = [
