@@ -20,17 +20,21 @@
 
 html, body{
     height: 100%;
-    background-color: var(--black);
 
 }
+
 body{
-    /* display: flex; */
     font-family: var(--main-font);
     background-color: var(--black);
 
 }
 h1, h2, h3, h4, h5, h6{
     font-family: var(--title);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color:var(--background);
 }
 
 
@@ -59,4 +63,18 @@ img.logo{
 /**Footer**/
 footer{
     flex-shrink: 0;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
 }
