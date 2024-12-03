@@ -1,6 +1,7 @@
 {% load static %}
 
 <header>
+  {% with request.resolver_match.url_name as url_name %}
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <!--Logo-->
@@ -11,13 +12,27 @@
           <!--Navbar-->
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
               <a class="nav-link" href="{% url 'about' %}">About Me</a>
               <a class="nav-link" href="{% url 'music' %}">Music</a>
               <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
               <a class="nav-link" href="{% url 'bookings' %}">Bookings</a>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                  href="{% url 'account_signup' %}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+              </li>
+              {% endif %}
             </div>
           </div>
         </div>
       </nav>
+      {% endwith %}
 </header>
