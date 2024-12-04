@@ -7,3 +7,8 @@ class About(models.Model):
     image = models.ImageField() 
     content = models.TextField()
     slug = models.SlugField(max_length=200, unique=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
