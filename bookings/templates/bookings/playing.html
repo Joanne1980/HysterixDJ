@@ -1,5 +1,7 @@
-{% extend 'base.html' %}
+{% extends 'base.html' %}
+{% load static %}
 
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +10,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Bookings
-        
-    </h1>
+    <h1>Bookings</h1>
+
+ {% endblock %}   
     
 </body>
 </html>
